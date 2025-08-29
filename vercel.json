@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "name": "master-bilgisayar",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install"
+}
