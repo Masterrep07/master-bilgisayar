@@ -75,12 +75,17 @@ export const blogPosts: BlogPost[] = [
   }
 ];
 
-export const getCategoryColor = (category: string): string => {
-  const colors: { [key: string]: string } = {
-    'Donanım': 'bg-blue-100 text-blue-800',
-    'Bakım': 'bg-green-100 text-green-800',
-    'Gaming': 'bg-purple-100 text-purple-800',
-    'Rehber': 'bg-yellow-100 text-yellow-800'
-  };
-  return colors[category] || 'bg-gray-100 text-gray-800';
+
+export const formatDate = (dateString: string): string => {
+  const date = new Date(dateString);
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  
+  const monthNames = [
+    '', 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
+    'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'
+  ];
+  
+  return `${day} ${monthNames[month]} ${year}`;
 };
