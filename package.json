@@ -1,16 +1,7 @@
 {
-  "name": "master-bilgisayar-website",
-  "version": "1.0.0",
+  "name": "new",
+  "version": "0.1.0",
   "private": true,
-  "description": "Master Bilgisayar - Professional Computer Repair Service Website",
-  "keywords": [
-    "computer repair",
-    "laptop repair",
-    "alanya",
-    "master bilgisayar",
-    "second hand",
-    "teknik servis"
-  ],
   "scripts": {
     "dev": "next dev -p 3005",
     "build": "next build", 
