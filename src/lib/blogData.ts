@@ -1,4 +1,21 @@
-// Blog yazıları için veriexport interface BlogPost {  id: string  title: string  excerpt: string  content: string  author: string  date: string  category: string  readTime: string  image: string  tags: string[]}export const blogPosts: BlogPost[] = [  {    id: '1',    title: 'Laptop Kasası Neden Bu Kadar Sıcak? Çözümler ve İpuçları',
+// Blog yazıları için veri
+export interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  date: string;
+  category: string;
+  readTime: string;
+  image: string;
+  tags: string[];
+}
+
+export const blogPosts: BlogPost[] = [
+  {
+    id: '1',
+    title: 'Laptop Kasası Neden Bu Kadar Sıcak? Çözümler ve İpuçları',
     excerpt: 'Laptopta aşırı ısınma problemi ve çözüm yöntemleri. Temizlik, fan kontrolü ve termal macun değişimi hakkında detaylı bilgiler.',
     content: 'Laptop aşırı ısınması yaygın bir problemdir. Temel nedenler fan tıkanması, termal macun kuruması ve toz birikmesidir. Master Bilgisayar olarak bu sorunları profesyonelce çözebiliriz. Düzenli temizlik ve bakımla laptopunuzun ömrü uzar. Profesyonel tamir hizmeti için bizimle iletişime geçin.',
     author: 'Ahmet Demir',
@@ -56,24 +73,14 @@
     image: '⚡',
     tags: ['Anakart', 'Arıza', 'Tanı', 'Onarım']
   }
-]
+];
 
 export const getCategoryColor = (category: string): string => {
-  const colors = {
+  const colors: { [key: string]: string } = {
     'Donanım': 'bg-blue-100 text-blue-800',
     'Bakım': 'bg-green-100 text-green-800',
-    'Gaming': 'bg-purple-100 text-purple-800', 
-    'Rehber': 'bg-yellow-100 text-yellow-800',
-    'Güncel': 'bg-red-100 text-red-800'
-  }
-  return colors[category as keyof typeof colors] || 'bg-gray-100 text-gray-800'
-}
-
-export const formatDate = (dateString: string): string => {
-  const date = new Date(dateString)
-  return date.toLocaleDateString('tr-TR', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
-}
+    'Gaming': 'bg-purple-100 text-purple-800',
+    'Rehber': 'bg-yellow-100 text-yellow-800'
+  };
+  return colors[category] || 'bg-gray-100 text-gray-800';
+};
